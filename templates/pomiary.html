@@ -1,0 +1,32 @@
+<!doctype html>
+
+<html lang="pl">
+
+<head>
+  <meta charset="utf-8">
+  <title>Pomiary urządzenia</title>
+  <meta name="description" content="Pomiary">
+  <meta name="author" content="Stanisław & Wojtas">
+</head>
+
+<body>
+<h1>Moje pomiary</h1>
+
+<p>Numer urządzenia: {{ numer_urzadzenia }}</p>
+<p>Wartość pomiaru: {{ pomiar }}</p>
+{% for number in range(15) %}
+<a href="/pomiar/{{number}}"><button>Urzadzenie numer {{ number }}</button></a>
+{% endfor %}
+
+
+
+<h1>MOJE URZADZENIA 2</h1>
+
+{% for urzadzenie in lista_urzadzen %}
+  <h3>{{urzadzenie['nazwa_urzadzenia']}}</h3>
+  <p>wartosc pomiaru: {{urzadzenie['napiecie']}}</p>
+
+{% endfor %}
+
+</body>
+</html>
